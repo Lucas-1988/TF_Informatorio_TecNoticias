@@ -1,10 +1,12 @@
 :root {
-    --negro: #141414;
-    --gris: #404040;
+    --negro: #ffffff;
+    --gris: #ffffff;
     --blanco: #f0f0f0;
     --verdeagua: #00A19A;
     --gris_claro: #F1F1F1;
 }
+
+
 
 /* RESET ESTILOS Y GENERALES*/
 body, h1, h2, h3, h4, p, li, ul, section, div, a, ol, img {
@@ -12,13 +14,22 @@ body, h1, h2, h3, h4, p, li, ul, section, div, a, ol, img {
     padding: 0;
     text-decoration: none;
     list-style: none;
-    font-family: 'Poppins', 'sans-serif';
+    font-family: "Bebas Neue", sans-serif;
     font-size: 1rem;
     color: var(--azul-laguna);
     box-sizing: border-box;
 }
 
+.custom-text {
+    color: white;
+    white-space: nowrap; 
+    font-size: 100px;
+    text-align: center; 
+}
 
+.supernerds {
+    color: rgba(190, 106, 254, 1); /* Cambia el color solo de la palabra "supernerds" */
+}
 
 .contenedor_ppal {
     position: relative; 
@@ -62,7 +73,7 @@ header {
 }
 
 .encabezado_logo img {
-    width: 12rem;
+    width: 9rem;
     height: auto;
 }
 
@@ -399,6 +410,7 @@ header {
     width: 40rem;
 }
 
+
 footer {
     display: flex;
     justify-content: end; 
@@ -721,7 +733,7 @@ input[type="password"]:focus {
 
 .iniciosesion {
     margin-top: 1.6rem;
-    background-color: black; 
+    background-color: rgb(54, 54, 54); 
     color: white; 
     border: none; 
     border-radius: 1rem; 
