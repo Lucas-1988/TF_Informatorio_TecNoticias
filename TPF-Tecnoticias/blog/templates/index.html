@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+{% load static %}
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>TecNoticias</title>
         <a rel="icon" type="image/png" href="img/enfoqueambico.png"></a>
         <li><a href="{% url 'quienessomos' %}">¿Quienes somos?</a></li>
-        <li><a href="">Contactanos</a></li>
-        <li><a href="">Iniciar Sesión</a></li>
+        <li><a href="{% url 'contacto' %}">Contactanos</a></li>
+        <li><a href="{% url 'registro' %}">Iniciar Sesión</a></li>
     </head>
 
     <body>
