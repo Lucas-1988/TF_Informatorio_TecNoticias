@@ -1,144 +1,66 @@
 <!DOCTYPE html>
 <html lang="es">
+{% load static %}
     <head>
-        {% load static %}
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Enfoque Ambiental</title>
-        <link rel="icon" type="image/png" href="{% static 'img/enfoqueambico.png' %}">
-        <meta content="Sistema de información territorial de la provincia del Chaco, herramienta de visualización, consulta y descarga de datos georreferenciados" name="description">
-        <meta content="geoportal, datos, georreferencia, visualizador, Chaco, SIT, Sistemas de informacion territorial, gis, sig" name="keywords">
-
-        <!-- Estilos -->
+        <title>TecNoticias</title>
+        <!--carga de estilo css-->
         <link rel="stylesheet" href="{% static 'styles/style.css' %}">
-
         <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     </head>
 
-
     <body>
-        <div class="contenedor_ppal"> 
-            <div class="contenedor_ppal-img">
-                <img src="{% static 'img/fondo_inicio.png' %}" alt="">
-            </div>
-            <header>
-                <div class="encabezado_logo">
-                    <a href="{% url 'posts' %}">
-                        <img src="{% static 'img/enfoqueamb_logo.png' %}" alt="">
-                    </a>
-                </div>
-                <div class="encabezado_enlaces">
-                    <li><a href="{% url 'quienessomos' %}">¿Quiénes somos?</a></li>
-                    <li><a href="">Contactanos</a></li>
-                    <li><a href="">Sobre el proyecto</a></li>
-                    {% if user.is_authenticated %}
-                        <li>Bienvenido, {{ user.username }}</li>
-                        <li>
-                            <form action="{% url 'logout' %}" method="post" style="display:inline;">
-                                {% csrf_token %}
-                                <button type="submit" style="background:none; border:none; color:inherit; cursor:pointer;">Cerrar sesión</button>
-                            </form>
-                        </li>
-                    {% else %}
-                        <li><a class="boton_inicioses" href="{% url 'login' %}">Iniciar Sesión</a></li>
-                        <!-- <li><a href="{% url 'registro' %}">Registrarse</a></li> -->
-                    {% endif %}
-                </div>
-            </header>
 
-            <div class="contenedor_ppal-logo">
-                <h1>Bienvenidos a Enfoque ambiental!<br>
-                    tu blog de noticias con todo lo que tenes que saber de la actualidad de nuestro planeta
+        <!-- Contenedor principal de la imagen -->
+        <div class="caja_principal_imagentx">
+            <div class="Menus">
+                <link rel="icon" type="image/png" href="{% static 'img/TCN_logo_color.png' %}">
+                <li><a href="{% url 'quienessomos' %}">¿Quienes somos?</a></li>
+                <li><a href="{% url 'contacto' %}">Contactanos</a></li>
+                <li><a href="{% url 'registro' %}">Iniciar sesión</a></li>
+            </div>
+            <div class="caja_principal_imagen">          
+                <img src="{% static 'img/fondo_inicio.png' %}" alt="fondo de inicio" class="fondo-imagen">           
+            </div>
+            <div class="caja_principal_logo">
+                <a href="{% url 'posts' %}">
+                    <img src="{% static 'img/TCN_logo.png' %}" alt="logo TecNoticias" class="logo">
+                </a>
+            </div>
+            <div class="caja_principal_texto">
+                <h1>
+                    TECNOTICIAS
                 </h1>
-                <p>Enfoque Ambiental es tu fuente confiable para estar al tanto de las últimas noticias y tendencias sobre el medio ambiente. 
-                    Nuestro blog ofrece artículos informativos, análisis y recursos sobre sostenibilidad, cambio climático y conservación, 
-                    todo diseñado para inspirarte a tomar acción por nuestro planeta. ¡Explorá y compartí con nosotros!</p>
-            </div>
-            <div class="contenedor_ppal-deslizar">
-                <h2>Deslizá para conocer más</h2>
-                <img src="{% static 'img/arrow_bajo.png' %}" alt="">
+                <h2>
+                    NERDS ON DEMAND
+                </h2>
             </div>
         </div>
 
-        <div class="contenedorblog">
-            <div class="contenedorblog_inicio">
-                <h1>Blog de noticias ambientales</h1>   
-                <div class="contenedor_redes">
-                    <a href="" target="_blank" class="icon"><img class="redes__iconos-svg" src="{% static 'img/iconos/instagram.png' %}" alt="instagram" title="instagram"/></a>
-                    <a href="" target="_blank" class="icon"><img class="redes__iconos-svg" src="{% static 'img/iconos/facebook.png' %}" alt="facebook" title="facebook"/></a>
-                    <a href="" class="icon" target="_blank"><img class="redes__iconos-svg" src="{% static 'img/iconos/twitter.png' %}" alt="x-twitter" title="x-twitter"/></a>
-                    <a href="" class="icon" target="_blank"><img class="redes__iconos-svg" src="{% static 'img/iconos/youtube.png' %}" alt="youtube" title="youtube"/></a>
-                </div> 
-                <div class="contenedor_amb">
-                    <a href="https://www.vidasilvestre.org.ar/" target="_blank" class="icon"><img class="redes__iconos-svg" src="{% static 'img/iconos/vidasilv.png' %}" alt="vidasilvestre" title="vidasilvestre"/></a>
-                    <a href="https://www.avesargentinas.org.ar/" target="_blank" class="icon"><img class="redes__iconos-svg" src="{% static 'img/iconos/avesarg.png' %}" alt="avesarg" title="avesarg"/></a>
-                    <a href="https://wwf.panda.org/es/" class="icon" target="_blank"><img class="redes__iconos-svg" src="{% static 'img/iconos/wwf.png' %}" alt="wwf" title="wwf"/></a>
-                    <a href="https://www.greenpeace.org/argentina/" class="icon" target="_blank"><img class="redes__iconos-svg" src="{% static 'img/iconos/greenpace.png' %}" alt="greenpace" title="greenpace"/></a>
-                </div>     
-            </div>
-            <div class="contenedorblog_categorias">
-                <ul>
-                    <li>
-                        <a href="?">Todos</a>  
-                    </li>
-                    {% for categoria in categorias %}
-                        <li>
-                            <a href="?categoria={{ categoria.nombre }}">{{ categoria.nombre }}</a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
+        <div class="mensaje_bienvenida">
+                <p>
+                ¡Bienvenido/a a nuestro rincón digital donde la ciberseguridad es la clave! 🚀 Acá no solo hablamos de firewalls y antivirus, sino que nos sumergimos en el código fuente del mundo digital. Si te apasionan los bugs, los exploits, y los hacks más frescos, ésta es tu cueva digital.
+
+                Ya seas un ninja del teclado, un dev en busca de consejos, o simplemente alguien que quiere saber cómo blindar su Wi-Fi, este blog es para vos. Preparate para explorar vulnerabilidades, proteger tus datos y convertirte en todo un jedi de la seguridad digital.
+                    
+                Agarrate de tu tía y empecemos! 👾
+
+                </p>
         </div>
-
-        
-
-        <div class="contenedorposteos">
-            {% for i in posts %}
-                <div class="contenedorposteos_tarjeta">
-                    <div class="tarjeta_img">
-                        <div class="categorianoticia">
-                            <img src="{% static 'img/iconos/etiqueta.png' %}" alt="Etiqueta" class="icono-etiqueta">
-                            <h3>{{ i.categoria.nombre }}</h3>
-                        </div>
-                        <img class="imagenposts" src="{{ i.imagen.url }}" alt="noticia">
-                    </div>
-                    <div class="tarjeta_datos">
-                        <h4>{{ i.autor.username }}</h4>
-                        <h4>{{ i.fecha }}</h4>
-                    </div> 
-                    <h2>{{ i.titulo }}</h2>
-                    <p>{{ i.resumen }}</p>
-                    <div class="boton_vernoticia">
-                        <a href="{% url 'postindividual' i.id %}">LEER MÁS &rarr;</a> 
-                    </div>   
-        
-                    {% if user.is_staff or user.is_superuser %}
-                        <form action="{% url 'eliminar_post' i.id %}" method="post" style="display:inline;">
-                            {% csrf_token %}
-                            <button type="submit" class="btn-eliminar">x</button>
-                        </form>
-                    {% endif %}
-                </div>
-            {% empty %}
-                <p>No hay posts disponibles para mostrar, vuelva pronto!</p> 
-            {% endfor %}
-        </div>
-
-        <!-- Barra de paginación -->
-        <div class="paginacion">
-            <div class="pagina-enlaces">               
-                <span>-</span>
-
-                {% for num in posts.paginator.page_range %}
-                    {% if num == posts.number %}
-                        <strong>{{ num }}</strong>
-                    {% else %}
-                        <a href="?page={{ num }}">{{ num }}</a>
-                    {% endif %}
-                {% endfor %}    
-                <span>-</span>
-            </div>
-        </div>         
+                            
+        <footer>
+            <div class="contenedor_redes">
+                <a href="" target="_blank" class="icon"><img class="redes__iconos-svg" src="static/img/iconos/instagram.png" alt="instagram" title="instagram"/></a>
+                <a href="" target="_blank" class="icon"><img class="redes__iconos-svg" src="static/img/iconos/facebook.png" alt="facebook" title="facebook"/></a>
+                <a href="" class="icon" target="_blank"><img class="redes__iconos-svg" src="static/img/iconos/twitter.png" alt="x-twitter" title="x-twitter"/></a>
+                <a href="" class="icon" target="_blank"><img class="redes__iconos-svg" src="static/img/iconos/youtube.png" alt="youtube" title="youtube"/></a>
+            </div> 
+            
+        </footer>
     </body>
