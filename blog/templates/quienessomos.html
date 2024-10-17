@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+    {% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TecNoticias</title>
+        <link rel="icon" type="image/png" href="{% static 'img/TCN_logo_color.png' %}">
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}">Volver al menú principal</a></li>
+                    <li><a href="{% url 'contacto' %}">Contactanos</a></li>
+                    <li><a href="{% url 'registro' %}">Registrarse</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="contenedor_quienesomos">
+            <h1>Quiénes somos</h1>
+            <img src="{% static 'img/quienessomos.png' %}" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id aut, recusandae nulla, optio velit, quidem iusto nobis tenetur possimus obcaecati quod quae tempore voluptatibus a doloremque! Quas deserunt impedit odio!<br>
+                <br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, sed. Consectetur non rerum nostrum quae itaque, voluptatem, esse alias ab ipsa dignissimos recusandae neque delectus expedita numquam pariatur quas minus.<br>
+                <br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed praesentium doloribus provident quos delectus, commodi iusto, quisquam laborum voluptatum ad qui id, corrupti numquam illum architecto magnam aspernatur expedita aut?
+            </p>
+        </div>   
+
+        <footer>
+            <div class="contenedor_redes">
+                <a href="" target="_blank" class="icon"><img class="redes__iconos-svg" src="{% static 'img/iconos/instagram.png' %}" alt="instagram" title="instagram"/></a>
+                <a href="" target="_blank" class="icon"><img class="redes__iconos-svg" src="{% static 'img/iconos/facebook.png' %}" alt="facebook" title="facebook"/></a>
+                <a href="" class="icon" target="_blank"><img class="redes__iconos-svg" src="{% static 'img/iconos/twitter.png' %}" alt="x-twitter" title="x-twitter"/></a>
+                <a href="" class="icon" target="_blank"><img class="redes__iconos-svg" src="{% static 'img/iconos/youtube.png' %}" alt="youtube" title="youtube"/></a>
+            </div> 
+        </footer>
+    </body>
+</html>
