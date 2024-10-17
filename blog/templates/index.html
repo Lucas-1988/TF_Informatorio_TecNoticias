@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TecNoticias</title>
+        <link rel="icon" type="image/png" href="{% static 'img/TCN_logo_color.png' %}">
+        <!--carga de estilo css-->
+        <link rel="stylesheet" href="{% static 'styles/style.css' %}?v=2">
+        <!-- <link rel="stylesheet" href="{% static 'styles/style.css' %}">-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Contenedor principal de la imagen -->
+        <div class="caja_principal_imagentx">
+            <div class="Menus">
+                <li><a href="{% url 'quienessomos' %}">¿Quienes somos?</a></li>
+                <li><a href="{% url 'contacto' %}">Contactanos</a></li>
+                <li><a href="{% url 'registro' %}">Iniciar sesión</a></li>
+            </div>
+            <div class="caja_principal_imagen">          
+                <img src="{% static 'img/fondo_inicio.png' %}" alt="fondo de inicio" class="fondo-imagen">           
+            </div>
+            <div class="caja_principal_logo">
+                <a href="{% url 'posts' %}">
+                    <img src="{% static 'img/TCN_logo.png' %}" alt="logo TecNoticias" class="logo">
+                </a>
+            </div>
+            <div class="caja_principal_texto">
+                <h1>
+                    TECNOTICIAS
+                </h1>
+                <h2>
+                    NERDS ON DEMAND
+                </h2>
+            </div>
+        </div>
+
+        <div class="mensaje_bienvenida">
+                <h3>
+                ¡Bienvenido/a a nuestro rincón digital donde la ciberseguridad es la clave! 🚀 Acá no solo hablamos de firewalls y antivirus, sino que nos sumergimos en el código fuente del mundo digital. Si te apasionan los bugs, los exploits, y los hacks más frescos, ésta es tu cueva digital.
+
+                Ya seas un ninja del teclado, un dev en busca de consejos, o simplemente alguien que quiere saber cómo blindar su Wi-Fi, este blog es para vos. Preparate para explorar vulnerabilidades, proteger tus datos y convertirte en todo un jedi de la seguridad digital.
+                    
+                Agarrate de tu tía y empecemos! 👾
+
+                </h3>
+        </div>
+                            
+        <footer>
+            <div class="contenedor_redes">
+                <a href="" target="_blank" class="icon"><img class="redes__iconos-svg" src="static/img/iconos/instagram.png" alt="instagram" title="instagram"/></a>
+                <a href="" target="_blank" class="icon"><img class="redes__iconos-svg" src="static/img/iconos/facebook.png" alt="facebook" title="facebook"/></a>
+                <a href="" class="icon" target="_blank"><img class="redes__iconos-svg" src="static/img/iconos/twitter.png" alt="x-twitter" title="x-twitter"/></a>
+                <a href="" class="icon" target="_blank"><img class="redes__iconos-svg" src="static/img/iconos/youtube.png" alt="youtube" title="youtube"/></a>
+            </div> 
+            
+        </footer>
+    </body>
