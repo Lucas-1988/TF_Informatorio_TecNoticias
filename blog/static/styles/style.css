@@ -73,8 +73,8 @@ body {
 /* Estilos de la imagen */
 .caja_principal_logo img {
     position: absolute;
-    top: 10%;
-    left: 10%;
+    top: 8%;
+    left: 4.5%;
     transform: translateX(-50%);
     width: 100px; /* Ajusta el tamaño de la imagen si es necesario */
     height: auto;
@@ -95,15 +95,41 @@ body {
 }
 
 .caja_principal_texto h1{
+    position: relative;
     font-size: 100px;
+    top: 10%;
+    left: -7%;
+    letter-spacing: 10px;
 
 }
 .caja_principal_texto h2{
+    position: relative;
     font-family: 'Roboto', sans-serif;
-    font-size: 30x;
+    font-size: 300x;
+    margin-top: -10px; /* Para dar más espacio bajo h1 */
+    top: 15%;
+    left: -32%;
     font-weight: 100px;
     letter-spacing: 5px;
     font-style: normal;
+    
+
+}
+
+.mensaje_bienvenida h3{
+    position: absolute;
+    text-align: justify;
+    font-family: 'Roboto Light', sans-serif;
+    color: white;
+    font-size: 20px;
+    top: 55%;
+    left: 10%;
+    right: 50%;
+    /*transform: translateX(-50%);  Centra el texto y lo gira 90 grados */
+    z-index: 3;
+    background-color: #000000;
+    opacity: 95%;
+    padding: 18px;
 }
 
 
