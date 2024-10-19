@@ -65,8 +65,6 @@ class CustomUser(AbstractUser):
         verbose_name = "Usuario"
         verbose_name_plural = "Usuarios"
         
-        
-
 
 # comentarios
 class Comentario(models.Model):

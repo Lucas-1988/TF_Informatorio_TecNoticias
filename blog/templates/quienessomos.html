@@ -1,34 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
-    {% load static %}
     <head>
+        {% load static %}
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>TecNoticias</title>
         <link rel="icon" type="image/png" href="{% static 'img/TCN_logo_color.png' %}">
+        <!-- Estilos -->
+        <link rel="stylesheet" href="{% static 'styles/style_quienessomos.css' %}">
+        <!-- Fuentes -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
     </head>
 
     <body>
-        <header>
-            <nav>
-                <ul>
+        <header>       
+            <div class="caja_principal_imagen_quienes_somos_fondo ">
+                <div class="Menus">
                     <li><a href="{% url 'index' %}">Volver al menú principal</a></li>
+                    <li><a href="{% url 'quienessomos' %}">¿Quienes somos?</a></li>
                     <li><a href="{% url 'contacto' %}">Contactanos</a></li>
-                    <li><a href="{% url 'registro' %}">Registrarse</a></li>
-                </ul>
-            </nav>
+                    <li><a href="{% url 'registro' %}">Iniciar sesión</a></li>
+                    {% if user.is_authenticated %}
+                        <li class="bienvenidouser">
+                            {% if user.icono %}
+                                <img src="{{ user.icono.url }}" alt="Icono de {{ user.username }}" class="icono_usuario">
+                            {% endif %}
+                            Bienvenido, {{ user.username }}
+                        </li>
+                        <li class="boton_cerrarses">
+                            <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="bot_cerrar">Cerrar sesión</button>
+                            </form>
+                        </li>
+                    {% else %}
+                        <li><a class="boton_inicioses" href="{% url 'login' %}">Iniciar Sesión</a></li>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="caja_principal_logo_quienes_somos">
+                <img src="{% static 'img/quienes_somos_fondo.png' %}" alt="fondo de inicio" class="fondo-imagen">
+            </div>
+            <div class="caja_principal_logo">
+                    <a href="{% url 'index' %}">
+                        <img src="{% static 'img/TCN_logo.png' %}" alt="logo TecNoticias" class="logo">
+                    </a>  
+            </div>
+            <div class="caja_principal_texto">
+                <h1>
+                    TECNOTICIAS
+                </h1>
+                <h2>
+                    CIBERSEGURIDAD
+                </h2>
+            </div>
         </header>
 
         <div class="contenedor_quienesomos">
             <h1>Quiénes somos</h1>
-            <img src="{% static 'img/quienessomos.png' %}" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id aut, recusandae nulla, optio velit, quidem iusto nobis tenetur possimus obcaecati quod quae tempore voluptatibus a doloremque! Quas deserunt impedit odio!<br>
-                <br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, sed. Consectetur non rerum nostrum quae itaque, voluptatem, esse alias ab ipsa dignissimos recusandae neque delectus expedita numquam pariatur quas minus.<br>
-                <br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed praesentium doloribus provident quos delectus, commodi iusto, quisquam laborum voluptatum ad qui id, corrupti numquam illum architecto magnam aspernatur expedita aut?
-            </p>
-        </div>   
+            <div class="contenedor_quienesomos-imagentx">
+                <div class="quienes-text">
+                    <h2>Somos:<br>
+                    • Lucas Miguel Leonczyk, <br>• Brian Alexander Czajka, <br>• Eduardo Abel Lopez Goitia, <br>• Alejandro David Jara, <br>• Clara Denise Drocezesky <br>• Rosana Marcela Mandziuk. <br>
+                    <br>
+                    Un equipo apasionado por la ciberseguridad y la programación. TecNoticias forma parte de nuestro proyecto final en la etapa 2 del curso de programación 2024 del Informatorio, una iniciativa que nos permitió explorar en profundidad el apasionante mundo del código y las tecnologías emergentes.<br>
+                    <br>
+                    Los temas relacionados al crecimiento de la ciberseguridad en el contexto actual, marcado por el desarrollo de la inteligencia artificial y su influencia en la protección de los datos, nos motiva a seguir investigando. En este espacio, encontrarás noticias y artículos que abordan desde las últimas vulnerabilidades hasta avances en la seguridad informática. Queremos compartir nuestras investigaciones y análisis sobre este campo, ofreciendo contenido relevante y actualizado para todos aquellos interesados en mantenerse al día con el cibercrimen y las amenazas digitales.<br>
+                    <br>
+                    ¡Gracias por acompañarnos en esta aventura digital!
+                    </h2>
+                </div>
+            </div>    
+        </div>
 
         <footer>
             <div class="contenedor_redes">
