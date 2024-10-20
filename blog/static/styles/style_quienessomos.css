@@ -29,13 +29,13 @@ body {
 
 /*TEXTO PRINCIPAL Y LOGO*/
 
-.caja_principal_imagen_quienes_somos_fondo img{
+.caja_principal_logo_quienes_somos img{
     position: absolute; 
     text-align: center;
-    /*height: 100vh;    */
     display: flex;
     height: auto;  
     overflow: hidden; 
+    opacity: 40%;       
 }
 
 .Menus {
@@ -61,12 +61,13 @@ body {
 
 .caja_principal_logo img{
     position: absolute;
-    top: 1.5%;
-    left: 5%;
+    top: 10.5%;
+    left: 4.7%;
     transform: translateX(-50%);
     width: 80px; /* Ajusta el tamaño de la imagen si es necesario */
     height: auto;
     z-index: 3; /* Asegura que el logo esté por encima de la imagen de fondo */
+    
 }
 
 .caja_principal_texto {
@@ -115,10 +116,10 @@ body {
 
 .contenedor_quienesomos h1{
     position: absolute;
-    font-family: 'Poiret One', sans-serif;
-    font-size: 400x;
-    color: var(--negro);
-    top: 20%;
+    
+    font-size: 50px;
+    color: var(--blanco);
+    top: 18%;
     left: 10%;
     right: 10%;
     font-weight: 100px;
@@ -135,19 +136,31 @@ body {
     position: absolute;
     text-align: justify;
     font-family: 'Poiret One', sans-serif;
-    color: var(--gris_claro);
+    color: #d1d1d1;
     font-size: 20px;
     top: 26%;
     left: 10%;
     right: 30%;
     /*transform: translateX(-50%);  Centra el texto y lo gira 90 grados */
     z-index: 3;
-    /*border: 2px solid var(--magenta);*/
-    background-color: #0000007a;
+    background-color: #000000a4;
     padding: 25px;
-    border-radius: 2px;    
+    border-radius: 10px;    
 }
-    
+
+.icono_quienes_somos img{
+    position: absolute;
+    top: 30%;
+    left: 98%;
+    transform: translateX(-100%);
+    width: 100%; /* Ajusta el tamaño de la imagen si es necesario */
+    max-width: 30rem;
+    height: auto;
+    z-index: 3; 
+    opacity: 95%;   
+}
+
+
 footer {
     display: flex;
     justify-content: end; 
