@@ -33,7 +33,7 @@ body {
     text-align: center;
     height: 100vh;    
     display: flex;  
-    overflow: hidden; 
+    overflow: hidden;    
     
 }
 
@@ -58,7 +58,9 @@ body {
     color: var(--magenta); /* Cambia el color al pasar el mouse */
 }
 
-
+.fondo-imagen {
+    opacity: 50%;
+}
 .fondo-imagen img {
     position: absolute;
     width: 100vw;  
@@ -66,17 +68,17 @@ body {
     z-index: 1;
     box-sizing: border-box;
     object-fit: cover;
-    
+        
 }
 
 
 /* Estilos de la imagen */
 .caja_principal_logo img {
     position: absolute;
-    top: 1.5%;
-    left: 5%;
+    top: 10%;
+    left: 3.5%;
     transform: translateX(-20%);
-    width: 100px; /* Ajusta el tamaño de la imagen si es necesario */
+    width: 80px; /* Ajusta el tamaño de la imagen si es necesario */
     height: auto;
     z-index: 3; /* Asegura que el logo esté por encima de la imagen de fondo */
 }
@@ -120,18 +122,18 @@ body {
     position: absolute;
     text-align: justify;
     font-family: 'Poiret One', sans-serif;
-    color: var(--gris_claro);
+    color: #bebebe;
     font-size: 20px;
     font-style: normal;
-    top: 50%;
+    top: 10%;
     left: 10%;
     right: 50%;
     /*transform: translateX(-50%);  Centra el texto y lo gira 90 grados */
     z-index: 3;
     /*border: 2px solid var(--magenta);*/
-    background-color: #0000007a;
+    /*background-color: #0000007a;*/
     padding: 25px;
-    border-radius: 2px;    
+    border-radius: 20px;    
 }
 
 .contenedorblog_categorias {
@@ -312,7 +314,7 @@ body {
 
 .contenidonoticia_titulos h4 {
     font-family: "Poiret One", serif;
-    font-weight: 400;
+    font-weight: 500;
     font-style: normal;
     font-size: 1.2rem;
 }
@@ -334,13 +336,14 @@ body {
     display: flex;
     justify-content: space-between;
     margin-right: 20rem;
+    
 }
 
-.icon1 img {
+/*.icon1 img {
     width: 1.8rem;
     height: auto;
     margin-left: 0.3rem;
-}
+}*/
 
 .contenidonoticia_titulos p {
     font-size: 0.9rem;
@@ -521,6 +524,52 @@ body {
 
 .contenedor_amb_ind img {
     margin-right: 1rem;
+}
+
+/* MAS PAGINAS - PAGINACION */
+
+.paginacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.pagina-info {
+    margin-right: 1rem;
+}
+
+.pagina-enlaces {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem; 
+}
+
+.pagina-enlaces a {
+    padding: 0.2rem 0.8rem; 
+    font-size: 1rem;
+}
+
+.pagina-enlaces strong {
+    color: var(--blanco);
+    font-weight: 400;
+    border-radius: 1rem;
+
+}
+
+.pagina-enlaces a:hover {
+    color: var(--verdeagua);
+}
+
+.contenedor_imagen_app img{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
+    margin: 0;
+    position: absolute;
+    left: 4%;
 }
 
 footer {

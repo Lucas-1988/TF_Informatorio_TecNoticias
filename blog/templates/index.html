@@ -28,7 +28,6 @@
             <div class="Menus">
                 <li><a href="{% url 'quienessomos' %}">¿Quienes somos?</a></li>
                 <li><a href="{% url 'contacto' %}">Contactanos</a></li>
-                <li><a href="{% url 'registro' %}">Iniciar sesión</a></li>
                 {% if user.is_authenticated %}
                 <li class="bienvenidouser">
                     {% if user.icono %}
@@ -47,7 +46,7 @@
             {% endif %}
             </div>
             <div class="caja_principal_imagen">          
-                <img src="{% static 'img/fondo_inicio.png' %}" alt="fondo de inicio" class="fondo-imagen">           
+                <img src="{% static 'img/fondo_inicio2.png' %}" alt="fondo de inicio" class="fondo-imagen">           
             </div>
             <div class="caja_principal_logo">
                 <a href="{% url 'index' %}">
@@ -66,13 +65,13 @@
 
         <div class="mensaje_bienvenida">
                 <h3>
-                    ¡Bienvenido/a a nuestro rincón digital donde la ciberseguridad es la clave! 🚀 <br>
+                    ¡Bienvenido/a a nuestro rincón digital donde la ciberseguridad es la clave! <br>
                     <br>                
                     Acá no solo hablamos de firewalls y antivirus, sino que nos sumergimos en el código fuente del mundo digital. Si te apasionan los bugs, los exploits, y los hacks más frescos, ésta es tu cueva digital.
                     Ya seas un ninja del teclado, un dev en busca de consejos, o simplemente alguien que quiere saber cómo blindar su Wi-Fi, este blog es para vos. <br>
                     <br>
                     Preparate para explorar vulnerabilidades, proteger tus datos y convertirte en todo un jedi de la seguridad digital.
-                    Así que empecemos! 👾
+                    Así que empecemos! 
                 </h3>
         </div>
 
@@ -127,10 +126,30 @@
                     {% endif %}
                 </div>
             {% empty %}
-                <p>No hay posts disponibles para mostrar, vuelva pronto!</p> 
+                <p>No hay temas disponibles!</p> 
             {% endfor %}
         </div>
-        
+
+        <!-- Barra de paginación -->
+        <div class="paginacion">
+            <div class="pagina-enlaces">               
+                <span>-</span>
+    
+                {% for num in posts.paginator.page_range %}
+                    {% if num == posts.number %}
+                        <strong>{{ num }}</strong>
+                    {% else %}
+                        <a href="?page={{ num }}">{{ num }}</a>
+                    {% endif %}
+                {% endfor %}    
+                <span>-</span>
+            </div>
+        </div>     
+        <div>
+            <div class="contenedor_imagen_app">
+                <img src="{% static 'img/imagen_app.png' %}" alt="aplicacion" class="imagen_aplicacion">
+            </div>
+        </div>
         <footer>
             <div class="contenedor_redes">
                 <a href="" target="_blank" class="icon"><img class="redes__iconos-svg" src="static/img/iconos/instagram.png" alt="instagram" title="instagram"/></a>
@@ -138,7 +157,6 @@
                 <a href="" class="icon" target="_blank"><img class="redes__iconos-svg" src="static/img/iconos/twitter.png" alt="x-twitter" title="x-twitter"/></a>
                 <a href="" class="icon" target="_blank"><img class="redes__iconos-svg" src="static/img/iconos/youtube.png" alt="youtube" title="youtube"/></a>
             </div>
-        
-                        
+                                   
         </footer>
     </body>
