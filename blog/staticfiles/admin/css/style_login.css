@@ -1,0 +1,228 @@
+:root {
+    --negro: #000000;
+    --gris: #4b4b4b;
+    --gris_claro: #b1b1b1;
+    --blanco: #f0f0f0;
+    --magenta: #AE0061;
+    --violeta: #5A61F7;
+    --azul: #012187;    
+}
+
+/* ESTILOS GENERALES */
+body, h1, h2, h3, p, h4, li, ul, section, div, a, ol, img {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Poiret One", sans-serif;
+    font-size: 1rem;
+    color: var(--blanco);
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+}
+
+.contenedor_ppal {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
+    margin: 0;     
+}
+/*.contenedor_ppal-img {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
+} */
+
+.contenedor_ppal-img img {
+    opacity: 40%;       
+} 
+
+/* Estilos del texto sobre la imagen */
+
+.caja_principal_texto {
+    position: absolute;
+    top: calc(10% + 300px); /* Ajusta la posición del texto para que esté debajo del logo */
+    left: 5%;
+    transform: translateX(-50%) rotate(270deg); /* Centra el texto y lo gira 90 grados */
+    color: white;
+    z-index: 3;
+    background-color: #ffffff00; /* Fondo transparente */
+    width: auto; /* Asegúrate de que no haya un límite de ancho */
+    white-space: nowrap;
+}
+
+.caja_principal_texto h1 {
+    position: relative;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 80px;
+    top: 10%;
+    left: -7%;
+    letter-spacing: 1px;
+}
+
+.caja_principal_texto h2 {
+    position: relative;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 20x;
+    margin-top: -10px; /* Para dar más espacio bajo h1 */
+    top: 15%;
+    left: -5%;
+    font-weight: 100px;
+    letter-spacing: 5px;
+    font-style: normal;
+}
+
+
+.registro_logo img {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    transform: translateX(-50%);
+    width: 80px; /* Ajusta el tamaño de la imagen si es necesario */
+    max-width: 12rem;
+    height: auto;
+    z-index: 3;  
+}
+
+.Menus {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 2.5rem;
+    margin-right: 2rem;
+    z-index: 1;
+    display: flex;
+    gap: 2rem; /* Espacio entre cada opción */
+}
+
+.Menus a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.Menus a:hover {
+    color: var(--magenta);
+}
+
+/* -------------------LOGIN ------------------*/
+.contenedorpadre_registro {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    z-index: 1;
+}
+
+.contenedor_img img{
+    position: relative;
+    top: 0%;
+    left: 100%;
+    transform: translateX(-100%);
+    width: 90%; /* Ajusta el tamaño de la imagen si es necesario */
+    max-width: 20rem;
+    height: auto;
+    z-index: 3;    
+}
+
+.contenedorgral_registro {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.700);
+    border-radius: 1rem;
+    display: flex;
+    width: 100%;
+    height: 60%; 
+    padding: 2rem;  
+    justify-content: space-between;
+    /*top: 0%;
+    left: 0%;  */  
+    
+}
+
+.contenedor_login {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.contenedor_login h1 {
+    font-size: 1.8rem;
+    margin: 3rem 0 1rem 0;
+    color: var(--blanco);
+}
+
+.registro_inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 18rem;
+    margin-bottom: 1rem;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    background-color: rgb(255, 255, 255, 0.5);
+    border: 0.5px solid #c4c4c4;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    background-color: white;
+    border-color: #7f35bba4;
+    outline: none;
+    box-shadow: 0 0 6px #7f35bba4;
+}
+
+.enlaces_registro {
+    text-align: center; /* Centrar el contenido dentro del contenedor */
+    margin-top: 10px; /* Ajusta el espacio superior para separar el texto del botón */
+}
+
+.enlaces_registro p,
+.enlaces_registro a {
+    font-family: 'Poiret One','sans-serif';
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--blanco);
+    margin: 0;
+}
+
+.enlaces_registro a {
+    color: var(--magenta); 
+    font-family: 'Roboto'; 
+    font-weight: bold; 
+}
+
+.iniciosesion {
+    margin-top: 1rem;
+    background-color: #7f35bb62;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    width: 18rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.iniciosesion:hover {
+    background-color: #7f35bba4;
+}
