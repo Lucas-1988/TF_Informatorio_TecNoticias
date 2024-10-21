@@ -27,7 +27,7 @@
                 <li><a href="{% url 'index' %}">Volver al menú principal</a></li>
                 <li><a href="{% url 'quienessomos' %}">¿Quienes somos?</a></li>
                 <li><a href="{% url 'contacto' %}">Contactanos</a></li>
-                
+                <li><a href="{% url 'registro' %}">Iniciar sesión</a></li>
                 {% if user.is_authenticated %}
                     <li class="bienvenidouser">
                         {% if user.icono %}
