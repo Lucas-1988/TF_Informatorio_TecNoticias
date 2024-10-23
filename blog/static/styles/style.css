@@ -76,7 +76,11 @@ body {
 .caja_principal_logo img {
     position: absolute;
     top: 10%;
+<<<<<<< HEAD
     left: 2.8%;
+=======
+    left: 3.5%;
+>>>>>>> 54cd59933410cb9f735302e7f4e9a65a339d23a8
     transform: translateX(-20%);
     width: 80px; /* Ajusta el tamaño de la imagen si es necesario */
     height: auto;
