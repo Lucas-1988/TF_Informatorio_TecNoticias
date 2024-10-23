@@ -10,7 +10,7 @@ from . import views
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls), #!SACAR ADMIN
     path('', include('apps.posts.urls')), 
     path ('', posts, name='posts'),
     path('', views.index, name='index'),

@@ -1,15 +1,14 @@
-<!-- templates/registro.html -->
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    {% load static %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
-    <link rel="icon" type="image/png" href="{% static 'img/TCN_logo_color.png' %}">
-        <!-- Estilos -->
-        <link rel="stylesheet" href="{% static 'styles/style_login.css' %}">
-        <!-- Fuentes -->
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TecNoticias</title>
+        <link rel="icon" type="image/png" href="{% static 'img/TCN_logo_color.png' %}">
+        <!--carga de estilo css-->
+        <link rel="stylesheet" href="{% static 'styles/style_login.css' %}?v=2">
+        <!-- Fuentes-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,25 +19,53 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="contenedor_ppal"> 
-        <div class="Menus">
-            <li><a href="{% url 'index' %}">Volver al menú principal</a></li>
-            <li><a href="{% url 'quienessomos' %}">¿Quienes somos?</a></li>
-            <li><a href="{% url 'contacto' %}">Contactanos</a></li>
-        <div class="contenedor_ppal-img">
-            <img src="{% static 'img/quienes_somos_fondo.png' %}" alt="">
-        </div>
-        <div class="contenedorpadre_registro">
-            <div class="tarjeta_registro">
-                <div class="logoenfoqueamb_registro">
-                    <a href="{% url 'posts' %}">
-                        <img src="{% static 'img/TCN_logo.png' %}" alt="">
-                    </a>
-                </div>
+    </head>
 
-                <!-- Contenedor para mostrar mensajes -->
+    <body>
+        <div class="contenedor_ppal">
+            <div class="Menus">
+                <li><a href="{% url 'index' %}">Volver al menú principal</a></li>
+                <li><a href="{% url 'quienessomos' %}">¿Quienes somos?</a></li>
+                <li><a href="{% url 'contacto' %}">Contactanos</a></li>
+                {% if user.is_authenticated %}
+                <li class="bienvenidouser">
+                    {% if user.icono %}
+                        <img src="{{ user.icono.url }}" alt="Icono de {{ user.username }}" class="icono_usuario">
+                    {% endif %}
+                    Bienvenido, {{ user.username }}
+                </li>
+                <li class="boton_cerrarses">
+                    <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="bot_cerrar">Cerrar sesión</button>
+                    </form>
+                </li>
+            {% else %}
+                <li><a class="boton_inicioses" href="{% url 'login' %}">Iniciar Sesión</a></li>
+            {% endif %}
+            </div>
+            <div class="contenedor_ppal-img">
+                <img src="{% static 'img/login_fondo.png' %}" alt="">
+            </div>
+            <div class="registro_logo">
+                <a href="{% url 'posts' %}">
+                    <img src="{% static 'img/TCN_logo.png' %}" alt="">
+                </a>
+            </div> 
+            <div class="caja_principal_texto">
+                <h1>
+                    TECNOTICIAS
+                </h1>
+                <h2>
+                    CIBERSEGURIDAD
+                </h2>
+            </div>
+        </div>
+        <div class="contenedor_nuevo_registro_img">
+            <img src="{% static 'img/Registro.png' %}" alt="">
+        </div>
+        <div class="contenedor_registronuevo">
+            <div class="contenedor_gral_registronuevo">
                 {% if messages %}
                 <ul class="messages">
                     {% for message in messages %}
@@ -46,16 +73,10 @@
                     {% endfor %}
                 </ul>
                 {% endif %}
-
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="registrouser_titulo">
                         <h1>Creá tu usuario</h1>
-                        <img src="{% static 'img/defaultuser.png' %}" alt="">
-                        <div class="form-group">
-                            <label for="id_icono" class="texto_subirimg">Subí tu imagen de perfil</label>
-                            {{ form.icono }}  
-                        </div>
                     </div>
                     <div class="formregistro_columnas">
                         <div class="formregistro_izq">
@@ -78,13 +99,22 @@
                                 {{ form.password2 }}
                             </div>
                         </div>
-                    </div>
+                    </div>             
                     <div class="contenedor_botonregistro">
                         <button type="submit" class="boton_registrarse">Registrarse</button>
                     </div>
-                </form>    
+                    <div class="form-group">
+                        <label for="id_icono" class="texto_subirimg">Subí tu imagen de perfil</label>
+                        <div class="file-upload-wrapper">
+                            <label for="file-upload" class="custom-file-upload">
+                                Seleccionar archivo
+                            </label>
+                        </div>
+                    </div>
+                    
+                </form>  
             </div>
         </div>
-    </div>
-</body>
-</html>
+
+
+    </body>      
