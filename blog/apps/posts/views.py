@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.contrib.auth.views import LogoutView
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import user_passes_test
+from django.contrib.auth.models import Group
 
 
 def posts(request):
