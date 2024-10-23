@@ -76,11 +76,7 @@ body {
 .caja_principal_logo img {
     position: absolute;
     top: 10%;
-<<<<<<< HEAD
     left: 2.8%;
-=======
-    left: 3.5%;
->>>>>>> 54cd59933410cb9f735302e7f4e9a65a339d23a8
     transform: translateX(-20%);
     width: 80px; /* Ajusta el tamaño de la imagen si es necesario */
     height: auto;
@@ -132,6 +128,38 @@ body {
  
 }
 
+.nuevanoticia {
+    position: absolute;
+    top: 10%;
+    left: 83%;
+    margin-top: auto; 
+    text-align: right;
+    margin: 0 0.5rem 1rem 0;
+    z-index: 3;
+    
+}
+
+.nuevanoticia a:hover {
+    font-family: 'Poiret One', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    background-color: #000;
+    color: var(--blanco); 
+    border: var(--blanco);
+    padding: 1rem 1rem; 
+    border-radius: 0.3rem; 
+    text-decoration: none; 
+    transition: all 0.4s ease;
+    z-index: 3;
+
+}
+
+.nuevanoticia a:hover {
+    background-color: var(--magenta);
+    color: var(--blanco);
+    z-index: 3;
+}
+
 .mensaje_bienvenida h3{
     position: absolute;
     text-align: justify;
@@ -181,6 +209,7 @@ body {
     /*background-color: #ae00605e;*/
     color: #ae0060;
 }
+
 
 /* TARJETAS DE POSTEOS */
 

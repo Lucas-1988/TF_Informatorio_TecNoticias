@@ -1,13 +1,12 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post, Categoria, Comentario
 from django.core.paginator import Paginator
-from .form import ComentarioForm, RegistroForm, LoginForm
+from .form import ComentarioForm, RegistroForm, LoginForm, PostForm, ContactForm
 from django.contrib import messages
 from django.contrib.auth.views import LogoutView
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import user_passes_test
-from django.contrib.auth.models import Group
-
+from django.http import HttpResponseForbidden, HttpResponseRedirect
 
 def posts(request):
     categorias = Categoria.objects.all()  
@@ -104,6 +103,36 @@ def login_view(request):
         form = LoginForm()
 
     return render(request, "login.html", {"form": form})
+
+#NUEVA NOTICIA
+@user_passes_test(is_staff) 
+def nuevo_post(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.autor = request.user
+            post.save()
+            return redirect('posts')
+    else:
+        form = PostForm()
+
+    return render(request, 'nuevo_post.html', {'form': form})
+
+@user_passes_test(is_staff) 
+def modificar_post(request, id):
+    post = get_object_or_404(Post, id=id)
+
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            form.save()
+            return redirect('postindividual', post_id=post.id) 
+    else:
+        form = PostForm(instance=post)
+
+    return render(request, 'modificar_post.html', {'form': form, 'post': post})
+
 
 
 

@@ -90,6 +90,11 @@
                     </ul>
                 </div>
             </div>
+            {% if user.is_staff or user.is_superuser %}
+            <div class="nuevanoticia">
+                <a href="{% url 'nuevo_post' %}" class="">Subir nueva noticia</a>
+            </div>
+            {% endif %}
         </div>
 
         <div class="contenedorposteos">
@@ -130,7 +135,7 @@
             {% endfor %}
         </div>
 
-        <!-- Barra de paginación -->
+        <!-- Barra de paginas -->
         <div class="paginacion">
             <div class="pagina-enlaces">               
                 <span>-</span>
@@ -156,7 +161,6 @@
                 <a href="" target="_blank" class="icon"><img class="redes__iconos-svg" src="static/img/iconos/facebook.png" alt="facebook" title="facebook"/></a>
                 <a href="" class="icon" target="_blank"><img class="redes__iconos-svg" src="static/img/iconos/twitter.png" alt="x-twitter" title="x-twitter"/></a>
                 <a href="" class="icon" target="_blank"><img class="redes__iconos-svg" src="static/img/iconos/youtube.png" alt="youtube" title="youtube"/></a>
-            </div>
-                                   
+            </div>                                  
         </footer>
     </body>
