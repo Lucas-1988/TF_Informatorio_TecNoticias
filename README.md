@@ -89,11 +89,11 @@ Sigue estos pasos para instalar y ejecutar el proyecto en tu máquina local:
 ---
 
 **Capturas de la interfaz**  
-- ![Página principal](/TF_Informatorio_TecNoticias/blog/media/media/tecnoticias.home.png)
-- ![Noticia individual](/TF_Informatorio_TecNoticias/blog/media/media/tecnoticias.noticia_individual.png)
-- ![Inicio de sesión](/TF_Informatorio_TecNoticias/blog/media/media/tecnoticias_login.png)
-- ![Registro](/TF_Informatorio_TecNoticias/blog/media/media/tecnoticias_registro.png)
-- ![Contacto](/TF_Informatorio_TecNoticias/blog/media/media/tecnoticias_contacto.png)
+- ![Página principal](/blog/media/media/tecnoticias.home.png)
+- ![Noticia individual](/blog/media/media/tecnoticias.noticia_individual.png)
+- ![Inicio de sesión](/blog/media/media/tecnoticias_login.png)
+- ![Registro](/blog/media/media/tecnoticias_registro.png)
+- ![Contacto](/blog/media/media/tecnoticias_contacto.png)
 
 ---
 
