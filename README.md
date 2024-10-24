@@ -92,8 +92,8 @@ Sigue estos pasos para instalar y ejecutar el proyecto en tu máquina local:
 - ![Página principal](/blog/media/media/tecnoticias.home.png)
 - ![Noticia individual](/blog/media/media/tecnoticias.noticia_individual.png)
 - ![Inicio de sesión](/blog/media/media/tecnoticias_login.png)
-- ![Registro](/blog/media/media/tecnoticias_registro.png)
-- ![Contacto](/blog/media/media/tecnoticias_contacto.png)
+- ![Registro](/blog/media/media/tecnoticias_registro_.png)
+- ![Contacto](blog/media/media/tecnoticias_contacto_.png)
 
 ---
 
