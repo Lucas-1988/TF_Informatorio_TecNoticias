@@ -48,7 +48,7 @@ class RegistroForm(UserCreationForm):
     )
 
     class Meta:
-        model = CustomUser
+        model = User
         fields = [
             "username",
             "email",
