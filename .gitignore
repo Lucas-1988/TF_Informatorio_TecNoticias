@@ -1,0 +1,6 @@
+#no subir a repositorio: env, archivos media, keys, debugs, bd
+
+entorno
+*.pyc
+__pycache__/
+.vscode

@@ -1,0 +1,259 @@
+:root {
+    --negro: #000000;
+    --gris: #4b4b4b;
+    --gris_claro: #b1b1b1;
+    --blanco: #f0f0f0;
+    --magenta: #AE0061;
+    --violeta: #5A61F7;
+    --azul: #012187;    
+}
+
+/* ESTILOS GENERALES */
+body, h1, h2, h3, p, h4, li, ul, section, div, a, ol, img {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Poiret One", sans-serif;
+    font-size: 1rem;
+    color: var(--blanco);
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+}
+
+.contenedor_ppal {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
+    margin: 0;
+    position: absolute;
+    
+}
+
+.contenedor_ppal-img img {
+    opacity: 40%;       
+} 
+
+/* Estilos del texto sobre la imagen */
+
+.caja_principal_texto {
+    position: absolute;
+    top: calc(10% + 300px); /* Ajusta la posición del texto para que esté debajo del logo */
+    left: 5%;
+    transform: translateX(-50%) rotate(270deg); /* Centra el texto y lo gira 90 grados */
+    color: white;
+    z-index: 3;
+    background-color: #ffffff00; /* Fondo transparente */
+    width: auto; /* Asegúrate de que no haya un límite de ancho */
+    white-space: nowrap;
+}
+
+.caja_principal_texto h1 {
+    position: relative;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 80px;
+    top: 10%;
+    left: -7%;
+    letter-spacing: 1px;
+}
+
+.caja_principal_texto h2 {
+    position: relative;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 20x;
+    margin-top: -10px; /* Para dar más espacio bajo h1 */
+    top: 15%;
+    left: -5%;
+    font-weight: 100px;
+    letter-spacing: 5px;
+    font-style: normal;
+}
+
+
+.registro_logo img {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    transform: translateX(-50%);
+    width: 80px; /* Ajusta el tamaño de la imagen si es necesario */
+    max-width: 12rem;
+    height: auto;
+    z-index: 3;  
+}
+
+.Menus {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 2.5rem;
+    margin-right: 2rem;
+    z-index: 1;
+    display: flex;
+    gap: 2rem; /* Espacio entre cada opción */
+}
+
+.Menus a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.Menus a:hover {
+    color: var(--magenta);
+}
+
+/*---------------CONTACTO----------------*/
+
+.contenedor_contacto {
+    position: absolute; /* Cambia a absolute para posicionamiento basado en la pantalla */
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta el desplazamiento para centrar completamente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    z-index: 2;
+}
+
+
+.contacto_titulo h1 {
+    position: absolute; /* Cambia a absolute para posicionamiento basado en la pantalla */
+    top: -15%; /* Centra verticalmente */
+    left: 1.5%; /* Centra horizontalmente */
+    font-size: 1.8rem;
+    
+    color: var(--blanco);
+    z-index: 2;
+}
+
+.contacto_titulo p {
+    position: absolute; /* Cambia a absolute para posicionamiento basado en la pantalla */
+    top: -6%; /* Centra verticalmente */
+    left: 1.5%; /* Centra horizontalmente */
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    z-index: 2;
+}
+
+.contacto_form {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5rem;
+    box-sizing: border-box;
+}
+
+.formcolumna1, .formcolumna2 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 1rem;
+    z-index: 1000;
+}
+
+label {
+    display: flex;
+    margin: 1.2rem 0 0.4rem 0;
+    font-size: 0.8rem;
+}
+
+.formcolumna1 input, .formcolumna2 input {
+    display: flex;
+    width: 450px;
+    height: 30px;
+    border: 1px solid #0000009a;
+    border-radius: 0.3rem;
+    padding-left: 0.5rem;
+}
+
+.formcolumna1 textarea, .formcolumna2 textarea {
+    display: flex;
+    width: 450px;
+    height: 30px;
+    border: 1px solid #0000009a;
+    border-radius: 0.1rem;
+    padding-left: 0.5rem;
+}
+
+textarea.input-contac {
+    height: 10rem;
+    width: 30rem;
+    resize: none; 
+}
+
+.bot_contacto {
+    display: flex;
+    border: none;
+    margin-top: 2rem;
+    background-color: #7f35bb62; /*COLOR BOTON ENVIAR*/
+    max-width: 15rem;
+    color: var(--blanco);
+    border-radius: 0.5rem !important;
+    cursor: pointer;
+    transition: background-color 0.3s; 
+}
+
+.bot_contacto:hover {
+    background-color: #0000009a; /*COLOR BOTON ENVIAR CON CURSOR ENCIMA*/
+}
+
+.form-img {
+    position: relative; 
+    bottom: 0; 
+    right: 0; 
+    z-index: 3;
+    width: 60%; 
+    height: 70%; 
+    display: flex;
+    justify-content: end;
+    margin: 2rem 8rem 4rem 0;
+}
+
+.input-contac {
+    position: relative; 
+    background:#0000009a; /*Fondo NOMBRE Y APELLIDO - ASUNTO - TELEFONO;*/
+    z-index: 3; 
+}
+
+textarea[name="comentario"],
+input[type="email"] {
+    background-color: #0000009a;
+    /*border: 0.8px solid #ffffff;*/
+    padding: 0.5rem 0.8rem; 
+    font-size: 1rem; 
+    box-sizing: border-box; 
+}
+
+textarea[name="comentario"]:focus,
+input[type="email"]:focus {
+    background-color: rgba(255, 255, 255, 0.315);
+    /*border-color: #ffffff8f; */
+    outline: none; 
+    /*box-shadow: 0 0 5px #7f35bb8f; */
+}
+
+
+::placeholder {
+    font-family: 'Poiret One', 'sans-serif';
+    font-style: italic;
+    font-size: 0.85rem;
+    color: #c0c0c0; 
+}
+
+footer {
+    display: flex;
+    justify-content: end; 
+    gap: 30%; 
+    color: white;
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
+    width: calc(100% - 30px); 
+    z-index: 1000; 
+}
